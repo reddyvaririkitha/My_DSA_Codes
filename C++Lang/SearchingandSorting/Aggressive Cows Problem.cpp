@@ -20,3 +20,54 @@
 // FJ can put his 3 cows in the stalls at positions 1, 4 and 8, 
 // resulting in a minimum distance of 3.
 
+#include<bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+
+bool checkPositionRight(int cows, ll positions[], int n, ll distance){
+    
+    int count = 1;
+    ll last_position = positions[0];
+    
+    for(int i=0;i<n;i++){
+        if(positions[i]-last_position >= distance){
+         	last_position = positions[i];
+        	count++;   
+        }
+        if(count ==cows){
+        	return 1;
+    	}
+    }
+    return 0;
+}
+
+int main() {
+
+	// Write your code here
+    int t,n,c,i;
+    cin>>t;
+    while(t--){
+        cin>>n>>c;
+        ll shops[n];
+        for(i=0;i<n;i++){
+            cin>>shops[i];
+        }
+        sort(shops,shops+n);
+        ll start = 0;
+        ll end = shops[n-1]-shops[0];
+        ll ans =-1;
+        while(start<=end){
+        	int mid   = start + (end-start)/2 ;
+        	if(checkPositionRight(c,shops,n,mid)){
+                ans = mid;
+                start = mid +1;
+            }
+            else{
+                end = mid-1;
+            }
+        }
+        cout<<ans<<endl;
+    }
+}
+
