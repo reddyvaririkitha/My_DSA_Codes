@@ -63,7 +63,15 @@ int main(){
     }
     // the above conditions line is equivalent to ~()
     
+    // Bitwise XOR operator- ^
+    cout<<"Bitwise XOR operator- ^"<<endl;
+    cout<<"1^0="<< (1 ^ 0)<<" , 0^1="<<(0 ^ 1)<<", 0^0="<<(0 ^ 0)<<", 1^1="<<(1 ^ 1) <<endl;
+    //  x^0 = X, x^1 = ~x, x^x = 0
+    cout<<"4^0= "<< (4^ 0) <<", 4^1= "<< (4 ^ 1) <<", 4^4= "<< (4 ^ 4) <<endl;
+    // 4 = 0100, 5= 0101. So 4^5 = (0100 ^ 0101) = (0^0)(1^1)(0^0)(0^1) = 0001 = 1
+    cout<<"4^5= "<< (4 ^ 5) <<endl;
     
+    cout<<"\n"<<endl;
     
     return 0;
 }
