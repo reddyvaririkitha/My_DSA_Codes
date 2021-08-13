@@ -39,3 +39,27 @@
 
 // In the second example, the optimal solution is to swap bits at indices 2 and 3, the string a changes as "0101" → "0011". The cost is |2−3|=1.
 
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    string s,t;
+    cin>>s>>t;
+    int cost=0;
+    for(int i=0;i<n;i++){
+        if(s[i] != t[i]){
+            if(i+1<n && s[i]!=s[i+1] && s[i+1]!=t[i+1]){
+                //swap
+                i++;
+            }
+            cost++;
+        }
+    }
+    cout<<cost<<endl;
+    
+    return 0;
+}
+
