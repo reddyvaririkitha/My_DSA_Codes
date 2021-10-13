@@ -23,11 +23,11 @@ using namespace std;
 string uniqueChar(string str) {
 	// Write your code here
     unordered_set<char> charSet;
-    string answer;
-    for(char ch:str){
-        if(charSet.find(ch) == charSet.end()){
-            answer.push_back(ch);
-            charSet.insert(ch);
+    string answer; //output string
+    for(char ch:str){  //here ch is a char and it takes every single letter of the input string we can also do it by taking i where ch is equivalent to str[i]
+        if(charSet.find(ch) == charSet.end()){ //if h is not in the set
+            answer.push_back(ch);   // add ch to the answer- output
+            charSet.insert(ch);  // insert it into the set for further ref.
         }
     }
     return answer;
