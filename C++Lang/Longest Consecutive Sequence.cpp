@@ -34,7 +34,7 @@ using namespace std;
 
 vector<int> longestConsecutiveIncreasingSequence(int *arr, int n) {
     // Your Code goes here
-	map <int,bool> traverse;
+    map <int,bool> traverse;
     int i;
     for(i=0;i<n;i++){
         travese[arr[i]] = 1;
