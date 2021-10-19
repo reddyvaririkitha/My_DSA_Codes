@@ -1,3 +1,4 @@
+// https://www.geeksforgeeks.org/egg-dropping-puzzle-dp-11/
 #include <bits/stdc++.h>
 
 using namespace std;
