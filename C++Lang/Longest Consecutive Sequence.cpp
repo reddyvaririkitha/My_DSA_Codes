@@ -32,19 +32,42 @@
 #include <vector>
 using namespace std;
 
+#include <bits/stdc++.h>
+
 vector<int> longestConsecutiveIncreasingSequence(int *arr, int n) {
     // Your Code goes here
-    map <int,bool> traverse;
-    int i;
-    for(i=0;i<n;i++){
-        travese[arr[i]] = 1;
+    unordered_set<int> s;
+    for(int i = 0; i<n;i++){
+        s.insert(arr[i]);
     }
-    int length, maxlength;
-    map <int,bool>::iterator it;
-    while(){
+    int count=0;
+    vector<int> ans;
+    for(int i = 0; i<n;i++){
+        if(s.find(arr[i]-1) == s.end()){ //this is the starting of the sequence
+            int a = arr[i];
+            // cout<<"element "<<a<<" is starting of the subsequence "<<endl;
+            int start = arr[i];
+            while(s.find(a) != s.end()){
+                // cout<<"\t"<<a<<" found"<<endl;
+                a++;
+            }
+            
+            int end = --a;
+            // cout<<"\tstart = "<<start<<" ,end = "<<end<<endl;
+            if(ans.empty()){
+                // cout<<"vector is empty"<<endl;
+                ans.push_back(start);
+                ans.push_back(end);
+            }else if((ans[1]-ans[0])<(end-start)){
+                // cout<<"vector is not empty and this is longest subsequence till now as ";
+                ans[0] = start;
+                ans[1] = end;
+                // cout<<"ans[0] = "<<ans[0]<<" and ans[1] = "<<ans[1]<<endl;
+            }
+        }
         
     }
-    
+    return ans;
 }
 
 int main() {
