@@ -58,8 +58,8 @@ int main() {
         ll end = shops[n-1]-shops[0];
         ll ans =-1;
         while(start<=end){
-        	int mid   = start + (end-start)/2 ;
-        	if(checkPositionRight(c,shops,n,mid)){
+            int mid   = start + (end-start)/2 ;
+            if(checkPositionRight(c,shops,n,mid)){
                 ans = mid;
                 start = mid +1;
             }
